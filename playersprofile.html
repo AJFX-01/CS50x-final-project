@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+<div class="student-profile py-4">
+    <div class="container">
+        <div class="row">
+        <div class="col">
+            <div class="card shadow-sm">
+                <div class="card-header bg-transparent border-0">
+                    <h3 class="mb-0">Dashboard</h3>
+                    </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+    <div class="student-profile py-4" background ="linear-gradient(to right, #4ca2cd, #67B26F)">
+        <div class="container">
+        <div class="row">
+
+            <div class="col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-transparent text-center">
+                {% for row in playersprofile %}
+                    {% if row["picture"] %}
+                    <img class="profile_img" src="{{ url_for('static', filename ='images/' + row['picture']) }} " alt="PROFILE PHOTO">
+                    {% else %}
+                    <img class="profile_img" src="{{ url_for('static', filename ='images/prof.jpg') }} " alt="PROFILE PHOTO">
+                    {% endif %}
+                <h3>{{ row["name"] }}</h3>
+                </div>
+                <div class="card-body">
+                <p class="mb-0"><strong class="pr-1">Position:</strong>{{ row["position"] }}</p>
+                <p class="mb-0"><strong class="pr-1">Player_ID:</strong>{{ row["id"]}}</p>
+                <p class="mb-0"><strong class="pr-1">Email:</strong>{{ row["email"] }}</p>
+                <p class="mb-0"><strong class="pr-1">Phone:</strong>{{ row["phone"] }}</p>
+                {% endfor %}
+            </div>
+            </div>
+            </div>
+            <div class="col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-transparent border-0">
+                <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Personal Information</h3>
+                </div>
+                <div class="card-body pt-0">
+                <table class="table table-bordered">
+                    {% for row in playersprofile %}
+                    <tr>
+                    <th width="30%">Username</th>
+                    <td width="2%">:</td>
+                    <td>{{ row["username"] }}</td>
+                    </tr>
+                    <tr>
+                    <th width="30%">Gender</th>
+                    <td width="2%">:</td>
+                    <td>{{ row["gender"] }}</td>
+                    </tr>
+                    <tr>
+                    <th width="30%">Height</th>
+                    <td width="2%">:</td>
+                    <td>{{ row["height"] }}</td>
+                    </tr>
+                    <tr>
+                    <th width="30%">Body Type</th>
+                    <td width="2%">:</td>
+                    <td>{{ row["body_build"] }}</td>
+                    </tr>
+                    <tr>
+                    <th width="30%">Favored Feet</th>
+                    <td width="2%">:</td>
+                    <td>{{ row["favored_feet"] }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                </div>
+            </div>
+                <div style="height: 26px"></div>
+            <div class="card shadow-sm">
+                <div class="card-header bg-transparent border-0">
+                <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Other Information</h3>
+                </div>
+                <div class="card-body pt-0">
+                    <p></p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+{% endblock %}

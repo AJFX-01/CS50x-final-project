@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit Form
+{% endblock %}
+
+{% block main %}
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+{% endfor %}
+
+    <div class="col-lg-12">
+            <h3><i class="far fa-clone pr-1"></i>Edit Match</h3>
+
+    </div>
+
+</br>
+ <div class="container">
+    <div class="row align-items-center">
+    <div class="shadow p-3 mb-5 bg-body rounded">
+            <form method="post">
+                <div class="mb-3">
+                    <label class="form-label">Host Name</label>
+                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="matchc" name="matchc" placeholder="Name" type="text">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Time</label>
+                    <input class="form-control mx-auto w-auto" id="timeo" name="timeo" placeholder="Time" type="text">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Date</label>
+                    <input class="form-control mx-auto w-auto" id="dateo" name="dateo" placeholder="Date" type="text">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Location</label>
+                    <input class="form-control mx-auto w-auto" id="leo" name="leo" placeholder="Location" type="text">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Number Of Players</label>
+                    <input class="form-control mx-auto w-auto" id="peui" name="peui" placeholder="Number" type="number" min="1">
+                </div>
+                <button class="btn btn-success" type="submit">SAVE</button>
+            </form>
+        </div>
+        <a href="{{ url_for('home') }}" class="btn btn-primary">Back Home</a>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete Profile
+{% endblock %}
+
+{% block main %}
+    <form action="/delete" method="post">
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <label>Are You Sure Want To Delete</label>
+            <button class="btn btn-outline-danger" type="submit" name="yes" value="yes">YES</button>
+            <button class="btn btn-outline-success" type="submit" name="no" value="no">NO</button>
+        </div>
+    </form>
+{% endblock %}

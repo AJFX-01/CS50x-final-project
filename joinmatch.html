@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Join Match
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div row="row align-items-center">
+            <div class="card-shadow-sm">
+                 <form method="post">
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <label>Are You Sure Want To Join Match</label>
+                            <button class="btn btn-outline-danger" type="submit" name="action" value="yes">YES</button>
+                            <button class="btn btn-outline-success" type="submit" name="action" value="no">NO</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

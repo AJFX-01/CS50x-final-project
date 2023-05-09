@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Upload
+{% endblock %}
+
+{% block main %}
+    {% if error %}
+        <header>
+            <div class="alert alert-primary mb-0 text-center" role="alert"><strong>Error: </strong>{{ error }}</div>
+        </header>
+    {% endif %}
+    <div class="card">
+        <div class="card-header">
+            Upload Profile Picture
+        </div>
+        <div class="card-body">
+            <form method="post" enctype=multipart/form-data>
+                <label for="picture">Image File: </label>
+                <input type=file name=picture>
+        <button class="btn btn-primary" type="submit">upload</button>
+    </form>
+    </div>
+    </div>
+{% endblock %}

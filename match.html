@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create Match
+{% endblock %}
+
+{% block main %}
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+{% endfor %}
+
+{% if session["player_id"] %}
+    <div class="col-lg-12">
+            <h3><i class="far fa-clone pr-1"></i>Create Match</h3>
+
+    </div>
+
+</br>
+    <div class="shadow p-3 mb-5 bg-body rounded">
+            <form action="/match" method="post">
+                <div class="mb-3">
+                    <label class="form-label">Host Name</label>
+                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="matchcc" name="matchcc" placeholder="Name" type="text">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Time</label>
+                    <input class="form-control mx-auto w-auto" id="timee" name="timee" placeholder="Time" type="time">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Date</label>
+                    <input class="form-control mx-auto w-auto" id="datee" name="datee" placeholder="Date" type="date">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Location</label>
+                    <input class="form-control mx-auto w-auto" id="lee" name="lee" placeholder="Location" type="text">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Number Of Players</label>
+                    <input class="form-control mx-auto w-auto" id="pee" name="pee" placeholder="Number" type="number" min="1">
+                </div>
+                <button class="btn btn-primary" type="submit">CREATE</button>
+            </form>
+        </div>
+        </div>
+{% else %}
+<h2>Must Be Logged In...</h2>
+<p>Sorry, You must be logged in to access this page!</p>
+
+<a href="{{ url_for('login') }}">Login Here</a>
+
+{% endif %}
+
+{% endblock %}

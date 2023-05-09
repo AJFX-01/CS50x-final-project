@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    EDIT PROFILE
+{% endblock %}
+
+{% block main %}
+    <form action="/edit" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text" required>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="email" placeholder="Email" type="text" required>
+        </div>
+        <div class="mb-3">
+            <select name="position">
+                <option disabled selected>Position</option>
+                <option value="Attacker">Attacker</option>
+                <option value="Defender">Defender</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <select name="gender">
+                <option disabled selected>Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <select name="favored">
+                <option disabled selected>Favored Feet</option>
+                <option value="Left">Left</option>
+                <option value="Right">Right</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <select name="body">
+                <option disabled selected>Body Build</option>
+                <option value="Slim">Slim</option>
+                <option value="Atheletic">Atheletic</option>
+                <option value="BBW">BBW</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <select name="height">
+                <option disabled selected>Height</option>
+                <option value="Short">Short</option>
+                <option value="Tall">Tall</option>
+                <option value="Meduim">Meduim</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="phone" name="phone" placeholder="Phone Number" type="text" required>
+        </div>
+        <div class="mb-3">
+        <button class="btn btn-primary" type="submit">SIGN UP</button>
+        </div>
+    </form>
+{% endblock %}
